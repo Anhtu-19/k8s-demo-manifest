@@ -1,0 +1,24 @@
+# Phiên bản api của deployment
+apiVersion: apps/v1
+# Tạo tài nguyên deployment
+kind: Deployment
+# Thông tin định danh của tài nguyên
+metadata:
+  name: web-deployment
+#nơ mô tả trạng thái mong muốn
+spec:
+  # Số lượng pod muốn chạy đồng thời
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
