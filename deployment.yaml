@@ -8,7 +8,7 @@ metadata:
 #nơ mô tả trạng thái mong muốn
 spec:
   # Số lượng pod muốn chạy đồng thời
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: web-app
